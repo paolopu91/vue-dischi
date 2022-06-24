@@ -38,11 +38,11 @@ export default{
                 })
         
         },
+    
+    },
     mounted(){
-        this.fetchMusics()
         console.log(this.fetchMusics())
-    }
-        
+        this.fetchMusics()
     }
 };
 </script>
