@@ -18,7 +18,7 @@ export default {
   name: 'App',
   components: {
     TheHeader,
-    CentralMain
+    CentralMain,
 }
 }
 </script>
