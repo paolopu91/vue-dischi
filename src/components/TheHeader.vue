@@ -1,5 +1,8 @@
+<!-- Questo qui sarà il componente del mio header -->
+
 <template>
-    <div>
+    <div class="container">
+        <img src="" alt="">
         ciao questo è l'header
     </div>
 </template>
@@ -12,7 +15,7 @@ export default{
     },
     data(){
         return{
-            
+
         }
     },
 };
