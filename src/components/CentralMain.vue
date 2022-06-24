@@ -43,9 +43,10 @@ export default{
         fetchMusics(searchGenre) {
             axios.get("https://flynn.boolean.careers/exercises/api/array/music", {
                 params:{
-                    name:searchGenre,
+                    genre:searchGenre,
                 }
-            }).then((axiosResp) => {
+            })
+            .then((axiosResp) => {
                 this.musicList = axiosResp.data.response;
 
 
