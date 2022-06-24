@@ -53,7 +53,6 @@ export default{
 <style scoped>
 .bg-main{
     background-color: #1E2D3B;
-    height: 90vh;
     padding: 7rem 0;
 }
 .my-col{
@@ -68,13 +67,16 @@ img{
 h2{
     font-size: 20px;
     text-align: center;
+    color: white;
 }
 h3{
     font-size:15px;
     text-align: center;
+    color: rgb(182, 182, 182);
 }
 h4{
     font-size: 10px;
     text-align: center;
+    color: rgb(182, 182, 182);
 }
 </style>
