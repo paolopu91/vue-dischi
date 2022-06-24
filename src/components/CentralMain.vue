@@ -3,6 +3,11 @@
 <template>
 
     <div class="bg-main py-3">
+        <!-- search bar -->
+        <div class="container">
+            <SearchMusicGenre @search="filterGenre"></SearchMusicGenre>
+        </div>
+        
         <!-- container of my main page musicList -->
         <div class="container py-3">
             <!-- row for my colls of bootstrap -->
@@ -22,30 +27,39 @@
 <script>
 //invoco la chiamata di axios
 import axios from "axios";
+import SearchMusicGenre from "./SearchMusicGenre.vue";
 
 export default{
-    name:"CentralMain",
-    data(){
-        return{
-            musicList:[],
-            success:true,
+    name: "CentralMain",
+    data() {
+        return {
+            musicList: [],
+            success: true,
+        };
+    },
+    methods: {
+        // function for using callback axios
+        fetchMusics(searchGenre) {
+            axios.get("https://flynn.boolean.careers/exercises/api/array/music", {
+                params:{
+                    name:searchGenre,
+                }
+            }).then((axiosResp) => {
+                this.musicList = axiosResp.data.response;
+
+
+            });
+        },
+        filterGenre(searchGenre){
+            console.log(searchGenre)
+            this.fetchMusics(searchGenre)
         }
     },
-    methods:{
-
-        // function for using callback axios
-        fetchMusics(){
-            axios.get("https://flynn.boolean.careers/exercises/api/array/music").then((axiosResp)=>{
-                    this.musicList = axiosResp.data.response
-                })
-        
-        },
-    
+    mounted() {
+        console.log(this.fetchMusics());
+        this.fetchMusics();
     },
-    mounted(){
-        console.log(this.fetchMusics())
-        this.fetchMusics()
-    }
+    components: { SearchMusicGenre }
 };
 </script>
 

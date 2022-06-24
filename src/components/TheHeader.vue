@@ -1,22 +1,23 @@
 <!-- Questo qui sarà il componente del mio header -->
 
 <template>
-<div class="my-bg d-flex justify-content-start">
+
+<div class="my-bg d-flex justify-content-between">
+        
         <img class="my-img" src="/img/spotify-logo.png" alt="">
+        <SearchMusicGenre class="d-none" />
 </div>
 </template>
 
 <script>
+import SearchMusicGenre from './SearchMusicGenre.vue';
 export default{
-    name:"TheHeader",
-    props:{
-
+    name: "TheHeader",
+    props: {},
+    data() {
+        return {};
     },
-    data(){
-        return{
-
-        }
-    },
+    components: { SearchMusicGenre }
 };
 </script>
 
