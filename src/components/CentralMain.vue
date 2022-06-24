@@ -23,9 +23,6 @@ import axios from "axios";
 
 export default{
     name:"CentralMain",
-    props:{
-
-    },
     data(){
         return{
             musicList:[],
@@ -43,6 +40,7 @@ export default{
         },
     mounted(){
         this.fetchMusics()
+        console.log(this.fetchMusics())
     }
         
     }
