@@ -1,6 +1,13 @@
 <template>
-    <div>
-        ciao questo è il main 
+    <div class="bg-main py-3">
+        <div class="container py-3">
+            ciao <br>
+            questo <br>
+            è   <br>
+            il <br>
+            main <br>
+        </div>
+        
     </div>
 </template>
 
@@ -31,3 +38,10 @@ export default{
     }
 };
 </script>
+
+
+<style scoped>
+.bg-main{
+    background-color: #1E2D3B;
+}
+</style>

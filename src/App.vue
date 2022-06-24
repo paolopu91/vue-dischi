@@ -1,7 +1,10 @@
 <template>
-  <div id="app">
+  <div>
+
     <TheHeader />
+
     <CentralMain />
+
   </div>
 </template>
 
