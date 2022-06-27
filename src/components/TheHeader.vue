@@ -1,36 +1,31 @@
-<!-- Questo qui sarà il componente del mio header -->
-
+<!-- my html -->
 <template>
-
-<div class="my-bg d-flex justify-content-between">
-        
+    <div class="my-bg d-flex justify-content-between">
         <img class="my-img" src="/img/favicon-32x32.png" alt="">
-        <SearchMusicGenre></SearchMusicGenre>
-         <!-- search bar
-        <div class="container d-flex justify-content-end">
-            <div class="my-container">
-                <SearchMusicGenre @search="filterGenre"></SearchMusicGenre>
-            </div>
-        </div> -->
-</div>
+
+        <div>
+            <SearchMusicGenre></SearchMusicGenre>
+        </div>
+    </div>
 </template>
 
+<!-- my vuecli -->
 <script>
-import SearchMusicGenre from './SearchMusicGenre.vue';
+import SearchMusicGenre from "./SearchMusicGenre.vue";
+export default {
+    data (){
+        return{
 
-
-export default{
-    name: "TheHeader",
-    props: {},
-    data() {
-        return {};
-    },
-    components: {
-        SearchMusicGenre 
         }
-};
+    },
+    components:{
+        SearchMusicGenre
+    }
+}
+
 </script>
 
+<!-- my scss -->
 <style >
 .my-bg{
     background-color: #2E3A46;

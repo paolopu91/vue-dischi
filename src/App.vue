@@ -2,6 +2,7 @@
   <div>
 
     <TheHeader />
+    
 
     <CentralMain />
 
@@ -14,12 +15,14 @@ import CentralMain from './components/CentralMain.vue';
 
 
 
+
 export default {
   name: 'App',
   components: {
     TheHeader,
     CentralMain,
-}
+    
+  }
 }
 </script>
 

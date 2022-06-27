@@ -3,12 +3,7 @@
 <template>
 
     <div class="bg-main py-3">
-        <!-- search bar -->
-        <div class="container d-flex justify-content-end d-none">
-            <div class="my-container">
-                <SearchMusicGenre @search="filterGenre"></SearchMusicGenre>
-            </div>
-        </div>
+      
         <!-- container of my main page musicList -->
         <div class="container py-3">
             <!-- row for my colls of bootstrap -->
@@ -28,7 +23,7 @@
 <script>
 //invoco la chiamata di axios
 import axios from "axios";
-import SearchMusicGenre from "./SearchMusicGenre.vue";
+import {state} from "../store"
 
 export default{
     name: "CentralMain",
@@ -51,21 +46,35 @@ export default{
             .then((axiosResp) => {
                 this.musicList= [];
                 this.musicList = axiosResp.data.response;
-
-
+            
             });
         },
-        filterGenre(searchGenre){
-            console.log(searchGenre)
-            this.fetchMusics(searchGenre)
-            
+        filterGenre(){
+            const lista = []
+
+            this.musicList.forEach(album => {
+                if(!lista.includes(album.genre)){
+                    lista.push(album.genre)
+                }
+            })
+
+            return lista
+         
+        },
+        filteredAlbums(){
+            if(!state.selectedGenre){
+                return this.musicList
+            }
+            return this.musicList.filter((album) =>{
+                return album.genre === state.selectedGenre;
+            })
         },
     },
     mounted() {
         console.log(this.fetchMusics());
         this.fetchMusics();
     },
-    components: { SearchMusicGenre }
+
 };
 </script>
 
