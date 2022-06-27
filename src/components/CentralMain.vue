@@ -4,7 +4,7 @@
 
     <div class="bg-main py-3">
         <!-- search bar -->
-        <div class="container">
+        <div class="my-container">
             <SearchMusicGenre @search="filterGenre"></SearchMusicGenre>
         </div>
         
@@ -94,5 +94,8 @@ h4{
     font-size: 10px;
     text-align: center;
     color: rgb(182, 182, 182);
+}
+.my-container{
+    width: 300px;
 }
 </style>
