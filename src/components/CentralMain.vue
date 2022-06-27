@@ -4,7 +4,7 @@
 
     <div class="bg-main py-3">
         <!-- search bar -->
-        <div class="container d-flex justify-content-end">
+        <div class="container d-flex justify-content-end d-none">
             <div class="my-container">
                 <SearchMusicGenre @search="filterGenre"></SearchMusicGenre>
             </div>
