@@ -4,7 +4,7 @@
 
 <div class="my-bg d-flex justify-content-between">
         
-        <img class="my-img" src="/img/spotify-logo.png" alt="">
+        <img class="my-img" src="/img/favicon-32x32.png" alt="">
         <SearchMusicGenre class="d-none" />
 </div>
 </template>
@@ -17,7 +17,9 @@ export default{
     data() {
         return {};
     },
-    components: { SearchMusicGenre }
+    components: {
+        SearchMusicGenre 
+        }
 };
 </script>
 
@@ -25,10 +27,6 @@ export default{
 .my-bg{
     background-color: #2E3A46;
     height: 100%;
-}
-.my-img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    padding: 0.5rem;
 }
 </style>

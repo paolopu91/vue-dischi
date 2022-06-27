@@ -4,10 +4,11 @@
 
     <div class="bg-main py-3">
         <!-- search bar -->
-        <div class="my-container">
-            <SearchMusicGenre @search="filterGenre"></SearchMusicGenre>
+        <div class="container d-flex justify-content-end">
+            <div class="my-container">
+                <SearchMusicGenre @search="filterGenre"></SearchMusicGenre>
+            </div>
         </div>
-        
         <!-- container of my main page musicList -->
         <div class="container py-3">
             <!-- row for my colls of bootstrap -->
@@ -36,6 +37,7 @@ export default{
             // my array empty
             musicList: [],
             success: true,
+            searchGenre: "",
         };
     },
     methods: {
@@ -47,6 +49,7 @@ export default{
                 }
             })
             .then((axiosResp) => {
+                this.musicList= [];
                 this.musicList = axiosResp.data.response;
 
 
@@ -55,7 +58,8 @@ export default{
         filterGenre(searchGenre){
             console.log(searchGenre)
             this.fetchMusics(searchGenre)
-        }
+            
+        },
     },
     mounted() {
         console.log(this.fetchMusics());
@@ -70,6 +74,7 @@ export default{
 .bg-main{
     background-color: #1E2D3B;
     padding: 7rem 0;
+    height: calc(100vh - 80px);
 }
 .my-col{
     text-align: center;
